@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <OptionStrict>Off</OptionStrict>
+    <StartupObject>AspNetVB.Program</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42108,42109</NoWarn>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031,42105,42106,42107,42353,42354,42355</WarningsAsErrors>
+    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>41999,42016,42017,42018,42019,42030,42032,42036,42104,42108,42109</NoWarn>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42026,42029,42031,42105,42106,42107,42353,42354,42355</WarningsAsErrors>
+    <DefineConstants>DefaultTopLevelBaseClass="Microsoft.AspNetCore.Mvc.VBView(Of Object)",NETCOREAPP2_0</DefineConstants>
+    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Import Include="Microsoft.AspNetCore.Mvc" />
+    <Import Include="Microsoft.AspNetCore.Mvc.Authorization" />
+    <Import Include="WebViews" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WebViews">
+      <HintPath>..\WebViews\bin\Debug\netstandard2.0\WebViews.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
